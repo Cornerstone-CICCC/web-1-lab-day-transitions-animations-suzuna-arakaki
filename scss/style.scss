@@ -81,14 +81,11 @@ body {
   #btn3::before {
     content: '';
     position: absolute;
-    // width: 20%;
     height: 100%;
     opacity: 0.5;
     z-index: 100;
     top: 0;
     left: 0;
-    // clip-path: polygon(10% 0, 30% 0, 20% 100%, 0 100%);
-    // clip-path: polygon(75% 0, 100% 0%, 75% 100%, 50% 100%);
     background-color: white;
   }
 
@@ -171,27 +168,14 @@ body {
 
   @keyframes shiny {
     from {
-      // width: 20;
-      // height: calc(100% - 100px);
       top: 0;
       left: 0;
-      // bottom: calc(100% - 10px);
-      // right: calc(100% - 10px);
       clip-path: polygon(15% 0, 30% 0, 15% 100%, 0 100%);
-      // clip-path: polygon(0 0, 20% 0, 0 20%, 0 0);
-      // clip-path: polygon(10% 0, 20% 0, 20% 100%, 0 100%);
     }
     to {
-      // width: 20;
-      // height: 100%;
-      // bottom: 0;
-      // right: 0;
       top: calc(100% - 100px);
       left: calc(100% - 100px);
       clip-path: polygon(15% 0, 30% 0, 15% 100%, 0 100%);
-      // clip-path: polygon(0 0, 20% 0, 0 20%, 0 0);
-      // clip-path: polygon(100% 100%, 100% 0, 0 100%, 100% 100%);
-      // clip-path: polygon(100% 0, 0 30%, 100% 20%, 100% 0);
     }
   }
 
@@ -213,7 +197,6 @@ body {
       top: calc(100% - 100px);
       left: calc(100% - 100px);
       clip-path: polygon(50% 0, 50% 0%, 50% 0%, 100% 100%, 0 100%);
-      // clip-path: polygon(50% 0, 100% 100%, 100% 100%, 0 100%, 0 100%);
       background-color: rgb(176, 167, 0);
     }
     75% {
@@ -227,11 +210,9 @@ body {
   @keyframes fig-move {
       from {
         top: 95%;
-        // height: 0;
       }
       to {
         top: 97%;
-        // height: calc(10% - 10px);
       }
     }
 
