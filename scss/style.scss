@@ -26,4 +26,214 @@ body {
     cursor: pointer;
     font-size: 20px;
   }
+
+  #btn1, #btn2 {
+    background-color: black;
+    color: white;
+    transition-duration: 0.25s;
+    position: relative;
+  }
+
+  #btn1:hover {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    box-shadow: 7px 7px #333;
+  }
+
+  #btn2:hover {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    margin-bottom: 5px;
+    margin-right: 5px;
+  }
+
+  #btn2::after {
+    content: '';
+    position: absolute;
+    background-color: #333;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    top: 0px;
+    left: 0px;
+    transition-duration: 0.25s;
+  }
+
+  #btn2:hover::after {
+    top: 7px;
+    left: 7px;
+  }
+
+  #btn3 {
+    background-color: green;
+    color: white;
+    border: 1px solid black;
+    position: relative;
+    transition-duration: 0.25s;
+  }
+
+  #btn3:hover {
+    background-color: rgb(0, 180, 0);
+  }
+
+  #btn3::before {
+    content: '';
+    position: absolute;
+    // width: 20%;
+    height: 100%;
+    opacity: 0.5;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    // clip-path: polygon(10% 0, 30% 0, 20% 100%, 0 100%);
+    // clip-path: polygon(75% 0, 100% 0%, 75% 100%, 50% 100%);
+    background-color: white;
+  }
+
+  #btn3:hover::before {
+    // width: 20%;
+    // height: 100%;
+    // z-index: 100;
+    // top: 0;
+    // left: 0;
+    animation: shiny 1s alternate linear;
+    // animation-name: shiny;
+    // animation-duration: 2s;
+    // animation-direction: alternate;
+  }
+
+  #shape1 {
+    width: 300px;
+    height: 300px;
+    background-color: rgb(215, 215, 215);
+    transition-duration: 0.5s;
+  }
+
+  #shape1::after {
+    content: 'Hello!';
+    font-size: 2rem;
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    transition-duration: 0.5s;
+  }
+
+  #shape1:hover {
+    background-color: yellow;
+  }
+
+  #shape1:hover::after {
+    opacity: 1;
+  }
+
+  #shape2 {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    animation: shapes 7s infinite linear;
+  }
+
+  #figure1 {
+    position: relative;
+    margin: 0;
+    img {
+      transition-duration: 0.5s;
+    } 
+
+    figcaption {
+      display: none;
+      position: absolute;
+      padding: 5px;
+    }
+  }
+
+  #figure1:hover {
+    img {
+      filter: grayscale(100);
+    }
+  }
+
+  #figure1:hover figcaption {
+    display: block;
+    background-color: pink;
+    width: 100%;
+    top: 97%;
+    transition-duration: 0.5s;
+    animation: fig-move 0.5s alternate ease;
+  }
+
+
+  // keyframes zone here!! -->>
+
+  @keyframes shiny {
+    from {
+      // width: 20;
+      // height: calc(100% - 100px);
+      top: 0;
+      left: 0;
+      // bottom: calc(100% - 10px);
+      // right: calc(100% - 10px);
+      clip-path: polygon(15% 0, 30% 0, 15% 100%, 0 100%);
+      // clip-path: polygon(0 0, 20% 0, 0 20%, 0 0);
+      // clip-path: polygon(10% 0, 20% 0, 20% 100%, 0 100%);
+    }
+    to {
+      // width: 20;
+      // height: 100%;
+      // bottom: 0;
+      // right: 0;
+      top: calc(100% - 100px);
+      left: calc(100% - 100px);
+      clip-path: polygon(15% 0, 30% 0, 15% 100%, 0 100%);
+      // clip-path: polygon(0 0, 20% 0, 0 20%, 0 0);
+      // clip-path: polygon(100% 100%, 100% 0, 0 100%, 100% 100%);
+      // clip-path: polygon(100% 0, 0 30%, 100% 20%, 100% 0);
+    }
+  }
+
+  @keyframes shapes {
+    0%, 100% {
+      top: 0;
+      left: 0;
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 0 38%);
+      background-color: red;
+    }
+    25% {
+      top: 0;
+      left: calc(100% - 100px);
+      border-radius: 50%;
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, 0% 38%);
+      background-color: green;
+    }
+    50% {
+      top: calc(100% - 100px);
+      left: calc(100% - 100px);
+      clip-path: polygon(50% 0, 50% 0%, 50% 0%, 100% 100%, 0 100%);
+      // clip-path: polygon(50% 0, 100% 100%, 100% 100%, 0 100%, 0 100%);
+      background-color: rgb(176, 167, 0);
+    }
+    75% {
+      top: calc(100% - 100px);
+      left: 0;
+      clip-path: polygon(50% 0, 100% 38%, 80% 100%, 20% 100%, 0% 38%);
+      background-color: yellow;
+    }
+  }
+
+  @keyframes fig-move {
+      from {
+        top: 95%;
+        // height: 0;
+      }
+      to {
+        top: 97%;
+        // height: calc(10% - 10px);
+      }
+    }
+
+
 }
